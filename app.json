@@ -13,7 +13,12 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "Used to capture photos for face feature analysis",
+        "NSPhotoLibraryUsageDescription": "Used to select photos for analysis"
+      },
+      "bundleIdentifier": "com.imagerecognition.app"
     },
     "android": {
       "adaptiveIcon": {
@@ -21,13 +26,27 @@
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "READ_MEDIA_IMAGES"
+      ],
+      "package": "com.imagerecognition.app"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
-      "expo-router"
-    ]
+      "expo-router",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Used to capture photos for face feature analysis"
+        }
+      ]
+    ],
+    "scheme": "imagerecognition"
   }
 }
